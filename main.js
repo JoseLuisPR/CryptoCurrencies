@@ -21,6 +21,8 @@ function pAJAX(url, metodo, callback) {
 function muestraDatos(datos) {
     document.getElementById("cuerpoTabla").innerHTML = "";
 
+    document.getElementById("imagenCarga").display = "none";
+
     var arrayOrdenado = [];
     datos.forEach(element => {
         var objeto = new Object({
@@ -169,6 +171,16 @@ function crearTabla(array) {
 
 
 window.onload = function () {
+    let imagenCarga = document.createElement("img");
+    let body = document.body;
+    imagenCarga.src ="./media/loading.gif";
+    imagenCarga.id = "imagenCarga";
+
+
+    body.appendChild(imagenCarga);
+
+
+
     let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=120&page=1";
     pAJAX(url, "get", muestraDatos);
 

@@ -158,3 +158,10 @@ header input {
 .colorAth{
     color:#7e7e7e;
 }
+
+#imagenCarga{
+    position: absolute;
+    display: block;
+    align-self: center;
+    margin-left: 35vw;
+}
