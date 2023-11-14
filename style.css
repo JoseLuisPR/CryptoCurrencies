@@ -17,7 +17,6 @@ body {
 header {
     display: flex;
     flex-direction: row;
-    border: 2px solid red;
     height: 12vw;
     justify-content: space-around;
 }
@@ -53,26 +52,34 @@ header input {
 /*TABLA*/
 
 .tabla {
-    border: 2px solid red;
     display: flex;
-
+    justify-content: center;
 }
 
-table {
-    margin: 0 auto;
-    width: 90%;
-    border-spacing: 1vw;
+#cuerpoTabla{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
 }
 
-td {
+
+.td {
     border-radius: 1vw;
+    position: relative;
     color: white;
     height: 10vw;
+    width: 25vw;
     background-color: rgba(42, 60, 90, .85);
+    margin-bottom: 2vw;
+}
+
+.td:hover{
+    background-color: rgba(59, 74, 99, 0.85);
 }
 
 .todo {
-    border: 2px solid red;
     display: grid;
     height: 100%;
     padding: 1vw;
@@ -84,39 +91,70 @@ td {
 }
 
 .arribaIzquierda {
-    border: 2px solid green;
     grid-column: 1;
-    height: 100%;
-    width: 100%;
+    height: 5vw;
+    width: 15vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
 
 .imagenCripto{
-    border: 2px solid purple;
+    margin: auto;
     grid-column: 1;
     grid-row: 1 / 3;
     width: 4vw;
 }
 
 .nombreCripto{
-    border: 2px solid blue;
+    width: 10vw;
+    text-align: center;
+    align-self: center;
+    font-size: 1.1rem;
     grid-column: 2;
     grid-row: 1;
 }
 
 .abreviacionCripto{
-    border: 2px solid red;
+    background-color: #050325;
+    border-radius: .5vw;
+    height: 2vw;
+    text-align: center;
+    padding: .5vw;
     grid-column: 2;
     grid-row: 2;
+    margin: 0;
 }
 
 
 
 .arribaDerecha{
-    border: 2px solid orange;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.precioActual{
+    font-size: 1.5rem;
+    padding: .5vw 0;
+}
+
+.colorPrecioBajo{
+    color: red;
+}
+
+.colorPrecioAlto{
+    color: green;
+}
+
+.abajoIzquierda{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-column: 1/3;
+}
+
+.colorAth{
+    color:#7e7e7e;
 }

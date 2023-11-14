@@ -54,7 +54,8 @@ function crearTabla(array) {
     let fila;
     let tbody = document.getElementById("cuerpoTabla");
     for (let i = 0; i < array.length; i++) {
-        let td = document.createElement("td");
+        let td = document.createElement("div");
+        td.className = "td";
         
         let div1 = document.createElement("div");
         div1.className="todo";
@@ -63,7 +64,7 @@ function crearTabla(array) {
         let div3 = document.createElement("div");
         div3.className="arribaDerecha";
         let div4 = document.createElement("div");
-        let div5 = document.createElement("div");
+        div4.className="abajoIzquierda";
 
 
         //Arriba izquierda
@@ -111,13 +112,49 @@ function crearTabla(array) {
         divPrecioAlto.appendChild(precioAlto);
         div3.appendChild(divPrecioAlto);
         
+        //Abajo izquierda
+        let divAth = document.createElement("div");
+        let colorAth = document.createElement("span");
+        colorAth.innerHTML = "ATH: ";
+        colorAth.className="colorAth";
+        let Ath = document.createElement("span");
+        Ath.innerHTML = "$"+formatearNumeroConSeparador(array[i].ath);
+        Ath.className="Ath";
+        divAth.appendChild(colorAth);
+        divAth.appendChild(Ath);
+        div4.appendChild(divAth);
+
+        let divAthChange = document.createElement("div");
+        let colorAthChange = document.createElement("span");
+        colorAthChange.innerHTML = "ATH Change: ";
+        colorAthChange.className="colorAth";
+        let AthChange = document.createElement("span");
+        AthChange.innerHTML = "$"+formatearNumeroConSeparador(array[i].ath_change);
+        AthChange.className="AthChange";
+        divAthChange.appendChild(colorAthChange);
+        divAthChange.appendChild(AthChange);
+        div4.appendChild(divAthChange);
+
+        let divMkCap = document.createElement("div");
+        let colorMkCap = document.createElement("span");
+        colorMkCap.innerHTML = "Mk. Cap: ";
+        colorMkCap.className="colorAth";
+        let mkCap = document.createElement("span");
+        mkCap.innerHTML = "$"+formatearNumeroConSeparador(array[i].market_cap);
+        mkCap.className="mkCap";
+        divMkCap.appendChild(colorMkCap);
+        divMkCap.appendChild(mkCap);
+        div4.appendChild(divMkCap);
+
+
+
+
 
 
         td.appendChild(div1);
         div1.appendChild(div2);
         div1.appendChild(div3);
         div1.appendChild(div4);
-        div1.appendChild(div5);
         
         if(i==0 || i%4==0){
             fila = document.createElement("tr");
