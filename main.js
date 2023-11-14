@@ -53,6 +53,7 @@ function formatearNumeroConSeparador(numero) {
 function crearTabla(array) {
     let fila;
     let tbody = document.getElementById("cuerpoTabla");
+    tbody.innerHTML = "";
     for (let i = 0; i < array.length; i++) {
         let td = document.createElement("div");
         td.className = "td";
@@ -79,7 +80,7 @@ function crearTabla(array) {
         div2.appendChild(nombreCripto);
 
         let abreviacionCripto = document.createElement("span");
-        abreviacionCripto.innerHTML = array[i].corto;
+        abreviacionCripto.innerHTML = (array[i].corto).toUpperCase();
         abreviacionCripto.className="abreviacionCripto";
         div2.appendChild(abreviacionCripto);
 
