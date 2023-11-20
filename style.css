@@ -163,9 +163,10 @@ header input {
 }
 
 #imagenCarga{
-    width: 25vw;
+    width: 30vw;
+    height: 30vw;
     position: absolute;
     display: block;
     align-self: center;
-    margin-left: 35vw;
+    margin-left: 34vw;
 }
