@@ -41,7 +41,7 @@ function muestraDatos(datos) {
 
     crearTabla(arrayOrdenado);
 
-    document.getElementById("buscador").addEventListener("keypress", function () {
+    document.getElementById("buscador").addEventListener("keyup", function (e) {
         filtrarObjetos(arrayOrdenado);
     })
 
