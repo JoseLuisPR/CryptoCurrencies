@@ -20,8 +20,7 @@ function pAJAX(url, metodo, callback) {
 
 function muestraDatos(datos) {
     document.getElementById("cuerpoTabla").innerHTML = "";
-
-    document.getElementById("imagenCarga").display = "none";
+    document.getElementById("imagenCarga").style.display = "none";
 
     var arrayOrdenado = [];
     datos.forEach(element => {
@@ -42,10 +41,23 @@ function muestraDatos(datos) {
 
     crearTabla(arrayOrdenado);
 
+    document.getElementById("buscador").addEventListener("keypress", function () {
+        filtrarObjetos(arrayOrdenado);
+    })
 
-    console.log(arrayOrdenado);
+}
 
+function filtrarObjetos(objetos) {
+    document.getElementById("cuerpoTabla").innerHTML = "";
+    let buscador = document.getElementById("buscador");
+    var busquedaTexto = buscador.value.toLowerCase();
 
+    var objetosFiltrados = objetos.filter(function(objeto) {
+        return objeto.name.toLowerCase().includes(busquedaTexto);
+    });
+
+    
+    crearTabla(objetosFiltrados);
 }
 
 function formatearNumeroConSeparador(numero) {
@@ -171,16 +183,6 @@ function crearTabla(array) {
 
 
 window.onload = function () {
-    let imagenCarga = document.createElement("img");
-    let body = document.body;
-    imagenCarga.src ="./media/loading.gif";
-    imagenCarga.id = "imagenCarga";
-
-
-    body.appendChild(imagenCarga);
-
-
-
     let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=120&page=1";
     pAJAX(url, "get", muestraDatos);
 

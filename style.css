@@ -32,7 +32,7 @@ header .transparente {
 .transparente p {
     color: white;
     padding: 1.8vw;
-    font-size: 1.8rem;
+    font-size: 1.5vw;
 }
 
 header input {
@@ -43,7 +43,7 @@ header input {
     outline: none;
     border: none;
     padding: 1.5vw;
-    font-size: 1.5rem;
+    font-size: 1.3vw;
     color: white;
     align-self: center;
 }
@@ -160,6 +160,7 @@ header input {
 }
 
 #imagenCarga{
+    width: 25vw;
     position: absolute;
     display: block;
     align-self: center;
