@@ -84,10 +84,7 @@ header input {
     height: 100%;
     padding: 1vw;
     grid-template-columns: 1fr 1fr;
-    /* Dos columnas de igual ancho */
     grid-template-rows: 1fr 1fr;
-    /* Dos filas de igual altura */
-    /* grid-gap: 5px; */
 }
 
 .arribaIzquierda {
@@ -110,9 +107,9 @@ header input {
     width: 10vw;
     text-align: center;
     align-self: center;
-    font-size: 1.1rem;
     grid-column: 2;
     grid-row: 1;
+    font-size: 1vw;
 }
 
 .abreviacionCripto{
@@ -122,6 +119,7 @@ header input {
     text-align: center;
     padding: .5vw;
     grid-column: 2;
+    font-size: .9vw;
     grid-row: 2;
     margin: 0;
 }
@@ -132,16 +130,20 @@ header input {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: flex-end;
+
 }
 
 .precioActual{
-    font-size: 1.5rem;
+    font-size: 1.3vw;
     padding: .5vw 0;
 }
 
 .colorPrecioBajo{
     color: red;
+}
+
+.colorPrecioBajo, .precioBajo, .colorPrecioAlto, .precioAlto{
+    font-size: .86vw;
 }
 
 .colorPrecioAlto{
@@ -153,6 +155,7 @@ header input {
     flex-direction: column;
     align-items: flex-start;
     grid-column: 1/3;
+    font-size: .9vw;
 }
 
 .colorAth{

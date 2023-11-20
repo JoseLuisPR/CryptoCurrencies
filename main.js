@@ -127,7 +127,7 @@ function crearTabla(array) {
         divPrecioAlto.appendChild(precioAlto);
         div3.appendChild(divPrecioAlto);
         
-        //Abajo izquierda
+        //Abajo
         let divAth = document.createElement("div");
         let colorAth = document.createElement("span");
         colorAth.innerHTML = "ATH: ";
