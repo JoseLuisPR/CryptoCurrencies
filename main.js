@@ -48,8 +48,25 @@ function filtrarObjetos(objetos) {
 }
 
 function formatearNumeroConSeparador(numero) {
-    return numero.toLocaleString('es-ES');
-  }
+    // Verificar si el número es decimal
+    const esDecimal = Number.isInteger(numero) ? false : true;
+
+    // Configuración regional para separadores de miles y decimales
+    const opciones = {
+        maximumFractionDigits: esDecimal ? 2 : 0,
+        minimumFractionDigits: esDecimal ? 2 : 0,
+        useGrouping: true, // Usar separadores de miles
+        // Configuración regional específica para tener coma como separador decimal
+        style: 'decimal',
+        decimalSeparator: '.',
+        groupingSeparator: ',',
+    };
+
+    // Formatear el número con separadores de miles y decimales
+    const numeroFormateado = numero.toLocaleString('en-EN', opciones);
+
+    return numeroFormateado;
+}
 
 function crearTabla(array) {
     let fila;
@@ -93,6 +110,7 @@ function crearTabla(array) {
         div3.appendChild(precioActual);
 
         let divPrecioBajo = document.createElement("div");
+        divPrecioBajo.id ="divPrecioBajo";
         let colorPrecioBajo = document.createElement("span");
         colorPrecioBajo.innerHTML = "Low 24: ";
         colorPrecioBajo.className="colorPrecioBajo";
@@ -104,6 +122,7 @@ function crearTabla(array) {
         div3.appendChild(divPrecioBajo);
 
         let divPrecioAlto = document.createElement("div");
+        divPrecioAlto.id ="divPrecioAlto";
         let colorPrecioAlto = document.createElement("span");
         colorPrecioAlto.innerHTML = "High 24: ";
         colorPrecioAlto.className="colorPrecioAlto";

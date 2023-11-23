@@ -138,12 +138,21 @@ header input {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-
+    justify-content: center;
+}
+#divPrecioAlto{
+    display: flex;
+    flex-direction: row;
+    height: 1.4vw;
+}
+#divPrecioBajo{
+    display: flex;
+    flex-direction: row;
+    height: 1.4vw;
 }
 
 .precioActual{
-    font-size: 1.3vw;
-    padding: .5vw 0;
+    font-size: 1.2vw;
 }
 
 .colorPrecioBajo{
@@ -177,4 +186,8 @@ header input {
     display: block;
     align-self: center;
     margin-left: 34vw;
+}
+
+@media only screen and (max-width: 768px) {
+
 }
