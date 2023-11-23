@@ -1,21 +1,8 @@
-function pAJAX(url, metodo, callback) {
-    var peticion_http;
-    var datos;
-    metodo = metodo.toUpperCase()
-    // Obtener la instancia del objeto XMLHttpRequest
-    peticion_http = new XMLHttpRequest();
-    // Preparar la funcion de respuesta
-    peticion_http.onreadystatechange = function () {
-        if (peticion_http.readyState == 4) {
-            if (peticion_http.status == 200) {
-                datos = JSON.parse(peticion_http.responseText);
-                callback(datos)
-            }
-        }
-    };
-    // Realizar peticion HTTP
-    peticion_http.open(metodo, url);
-    peticion_http.send(null);
+function pFetch(url, options, callback) {
+    options.method = options.method.toUpperCase()
+    fetch(url,options)
+        .then(response => response.json())
+        .then(data => callback(data))
 }
 
 function muestraDatos(datos) {
@@ -184,7 +171,10 @@ function crearTabla(array) {
 
 window.onload = function () {
     let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=120&page=1";
-    pAJAX(url, "get", muestraDatos);
+    let options = {
+        method : "get"
+    }
+    pFetch(url, options, muestraDatos);
 
 };
 
