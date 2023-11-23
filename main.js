@@ -158,8 +158,9 @@ function crearTabla(array) {
         div1.appendChild(div3);
         div1.appendChild(div4);
         
-        if(i==0 || i%4==0){
-            fila = document.createElement("tr");
+        if(i==0 || i%3==0){
+            fila = document.createElement("div");
+            fila.id ="tr";
             tbody.appendChild(fila);
         }
         fila.appendChild(td);
