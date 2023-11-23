@@ -127,7 +127,7 @@ function crearTabla(array) {
         colorAthChange.innerHTML = "ATH Change: ";
         colorAthChange.className="colorAth";
         let AthChange = document.createElement("span");
-        AthChange.innerHTML = "$"+formatearNumeroConSeparador(array[i].ath_change);
+        AthChange.innerHTML = formatearNumeroConSeparador(array[i].ath_change)+"%";
         AthChange.className="AthChange";
         divAthChange.appendChild(colorAthChange);
         divAthChange.appendChild(AthChange);
