@@ -138,41 +138,50 @@ header input {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: center;
+    padding-top: .5vw;
 }
 #divPrecioAlto{
     display: flex;
     flex-direction: row;
-    height: 1.4vw;
+    justify-content: space-between;
+    width: 100%;
 }
 #divPrecioBajo{
     display: flex;
     flex-direction: row;
-    height: 1.4vw;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .precioActual{
     font-size: 1.2vw;
 }
 
-.colorPrecioBajo{
-    color: red;
-}
 
-.colorPrecioBajo, .precioBajo, .colorPrecioAlto, .precioAlto{
-    font-size: .86vw;
-}
 
 .colorPrecioAlto{
     color: green;
 }
+.colorPrecioBajo{
+    color: red;
+}
+
 
 .abajoIzquierda{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
+    justify-content: space-between;
     grid-column: 1/3;
     font-size: .9vw;
+}
+
+#precioLowHight{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 9vw;
 }
 
 .colorAth{

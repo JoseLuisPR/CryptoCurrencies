@@ -58,12 +58,12 @@ function formatearNumeroConSeparador(numero) {
         useGrouping: true, // Usar separadores de miles
         // Configuración regional específica para tener coma como separador decimal
         style: 'decimal',
-        decimalSeparator: '.',
-        groupingSeparator: ',',
+        decimalSeparator: ',',
+        groupingSeparator: '.',
     };
 
     // Formatear el número con separadores de miles y decimales
-    const numeroFormateado = numero.toLocaleString('en-EN', opciones);
+    const numeroFormateado = numero.toLocaleString('es-ES', opciones);
 
     return numeroFormateado;
 }
@@ -108,32 +108,9 @@ function crearTabla(array) {
         precioActual.innerHTML = "$"+formatearNumeroConSeparador(array[i].current_price);
         precioActual.className="precioActual";
         div3.appendChild(precioActual);
-
-        let divPrecioBajo = document.createElement("div");
-        divPrecioBajo.id ="divPrecioBajo";
-        let colorPrecioBajo = document.createElement("span");
-        colorPrecioBajo.innerHTML = "Low 24: ";
-        colorPrecioBajo.className="colorPrecioBajo";
-        let precioBajo = document.createElement("span");
-        precioBajo.innerHTML = "$"+formatearNumeroConSeparador(array[i].low_24h);
-        precioBajo.className="precioBajo";
-        divPrecioBajo.appendChild(colorPrecioBajo);
-        divPrecioBajo.appendChild(precioBajo);
-        div3.appendChild(divPrecioBajo);
-
-        let divPrecioAlto = document.createElement("div");
-        divPrecioAlto.id ="divPrecioAlto";
-        let colorPrecioAlto = document.createElement("span");
-        colorPrecioAlto.innerHTML = "High 24: ";
-        colorPrecioAlto.className="colorPrecioAlto";
-        let precioAlto = document.createElement("span");
-        precioAlto.innerHTML = "$"+formatearNumeroConSeparador(array[i].high_24h);
-        precioAlto.className="precioAlto";
-        divPrecioAlto.appendChild(colorPrecioAlto);
-        divPrecioAlto.appendChild(precioAlto);
-        div3.appendChild(divPrecioAlto);
         
         //Abajo
+        let divAbajoIzq = document.createElement("div");
         let divAth = document.createElement("div");
         let colorAth = document.createElement("span");
         colorAth.innerHTML = "ATH: ";
@@ -143,7 +120,7 @@ function crearTabla(array) {
         Ath.className="Ath";
         divAth.appendChild(colorAth);
         divAth.appendChild(Ath);
-        div4.appendChild(divAth);
+        divAbajoIzq.appendChild(divAth);
 
         let divAthChange = document.createElement("div");
         let colorAthChange = document.createElement("span");
@@ -154,7 +131,7 @@ function crearTabla(array) {
         AthChange.className="AthChange";
         divAthChange.appendChild(colorAthChange);
         divAthChange.appendChild(AthChange);
-        div4.appendChild(divAthChange);
+        divAbajoIzq.appendChild(divAthChange);
 
         let divMkCap = document.createElement("div");
         let colorMkCap = document.createElement("span");
@@ -165,7 +142,39 @@ function crearTabla(array) {
         mkCap.className="mkCap";
         divMkCap.appendChild(colorMkCap);
         divMkCap.appendChild(mkCap);
-        div4.appendChild(divMkCap);
+        divAbajoIzq.appendChild(divMkCap);
+
+        div4.appendChild(divAbajoIzq);
+
+
+        //Abajo derecha
+        let divAbajoDrc = document.createElement("div");
+        divAbajoDrc.id = "precioLowHight";
+        let divPrecioBajo = document.createElement("span");
+        divPrecioBajo.id ="divPrecioBajo";
+        let colorPrecioBajo = document.createElement("span");
+        colorPrecioBajo.innerHTML = "Low 24: ";
+        colorPrecioBajo.className="colorPrecioBajo";
+        let precioBajo = document.createElement("span");
+        precioBajo.innerHTML = "$"+formatearNumeroConSeparador(array[i].low_24h);
+        precioBajo.className="precioBajo";
+        divPrecioBajo.appendChild(colorPrecioBajo);
+        divPrecioBajo.appendChild(precioBajo);
+        divAbajoDrc.appendChild(divPrecioBajo);
+
+        let divPrecioAlto = document.createElement("span");
+        divPrecioAlto.id ="divPrecioAlto";
+        let colorPrecioAlto = document.createElement("span");
+        colorPrecioAlto.innerHTML = "High 24: ";
+        colorPrecioAlto.className="colorPrecioAlto";
+        let precioAlto = document.createElement("span");
+        precioAlto.innerHTML = "$"+formatearNumeroConSeparador(array[i].high_24h);
+        precioAlto.className="precioAlto";
+        divPrecioAlto.appendChild(colorPrecioAlto);
+        divPrecioAlto.appendChild(precioAlto);
+        divAbajoDrc.appendChild(divPrecioAlto);
+
+        div4.appendChild(divAbajoDrc);
 
 
 
